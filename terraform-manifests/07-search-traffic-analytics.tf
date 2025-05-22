@@ -7,7 +7,7 @@ resource "azurerm_log_analytics_workspace" "insights" {
 
 resource "azurerm_application_insights" "example" {
   name                = "${var.environment}-appinsights-${random_pet.aksrandom.id}"
-  location            = azurerm_resource_group.example.location
+  location            = var.resoure_group_location
   resource_group_name = azurerm_resource_group.aks_rg.location
   workspace_id        = azurerm_log_analytics_workspace.insights.id
   application_type    = "web"
