@@ -6,10 +6,10 @@ Agentic AI is generally used in the field of automating repetitive tasks, like d
 This project demonstrates how to implement an AI Agent with [Java Spring AI](https://docs.spring.io/spring-ai/reference/index.html) framework and how use [Terraform](https://developer.hashicorp.com/terraform) Infrastructure-as-Code (IaC) tool to configure Azure AI Foundry components to hosting LLM models and Azure AKS Kubernetes cluster to run the containerized AI Agent as POD.
 ## Full End-to-End, from Development, CI/CD, Deployment to Provisioning with Terraform
 The code on this product is demonstrating how to develop the core logic with Java and Spring AI, Azure DevOps pipelines to  CI/CD deliver that logic on Azure ACR container registry and finally use Terraform to provision Azure AKS cluster, Azure Flexible server and Azure AI Foundry to provision everything needed to run this process. 
-- SpringBoot application Build process managed with Gradle.
-- Azure DevOps pipelines to build, run Spring AI JUnit Relevancy Factuality AI tests, HELM package and deploy application on Azure AKS cluster.
-- HELM charts to package and deploy Spring AI application
-- Terraform manifests:
+- **SpringBoot** application Build process managed with **Gradle**.
+- **Azure DevOps pipelines** to build, run Spring AI JUnit Relevancy Factuality AI tests, HELM package and deploy application on Azure AKS cluster.
+- **HELM** charts to package and deploy Spring AI application
+- **Terraform** manifests:
   - Build AKS Cluster.
   - Provision AD Extra ID managed identities and RBAC rules.
   - Provision MySQL Flexible Server and Database to store stock portfolio records.
