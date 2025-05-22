@@ -28,7 +28,7 @@ Software integrators like me use frameworks like Spring AI to providing these ca
 This AI Agent implementation is adhering [Model Context Protocol (MCP)](https://docs.spring.io/spring-ai/reference/api/mcp/mcp-overview.html) to letting that Agent communicate with external tools to fetching additional data on top of what it was learned and calling external tools executing tasks once its reasoning was done.
 
 The MCP Client (*the AI Agent from this demo*) is a key component in the Model Context Protocol (MCP) architecture, responsible for establishing and managing connections with MCP servers (*AI MCP servers from this demo*).
-The MCP servers from this demo will enable the AI agent to retrieve data from external tools (Portfolio DB stock inventory records and REST API call to fetching financial assets (stocks) from [twelvedata.com](https://twelvedata.com/) ), plan actions like sending notifications over WhatsUp and updating Portfolio DB stock inventory records.
+The MCP servers from this demo will enable the AI agent to retrieve data from external tools (Portfolio DB stock inventory records and REST API call to fetching financial assets (stocks) from [twelvedata.com](https://twelvedata.com/) ), plan actions like sending notifications over WhatsApp and updating Portfolio DB stock inventory records.
 
 
 ## About Agentic AI
@@ -50,7 +50,7 @@ That AKS Kubernetes cluster was provisioned through the Terraform scripts that y
 - **POC-MCP-CLIENT** : The actual AI Agent calling MCP servers to fetching (*preceive*) additional data and executing external tasks like sending notifications and updating DB records. ([sources github](https://github.com/agilesolutions/poc-mcp-client))
 - **STOCK-MCP-SERVER** : MCP server providing tools to fetch financial assets from [twelvedata.com](https://twelvedata.com/). ([sources github](https://github.com/agilesolutions/stock-mcp-server))
 - **PORTFOLIO-MCP-SERVER** : MCP server to fetching and updating stock portfolio records from proprietary RDMS database like PostgreSQL. ([sources github](https://github.com/agilesolutions/portfolio-mcp-server)) 
-- **NOTIFICATION-MCP-SERVER** : MCP server to sending out notifications over WhatsUp. ([sources github](https://github.com/agilesolutions/notification-mcp-server))
+- **NOTIFICATION-MCP-SERVER** : MCP server to sending out notifications over WhatsApp. ([sources github](https://github.com/agilesolutions/notification-mcp-server))
 
 ### What kind of software components can you find on this project 
 - Terraform configuration files to provisioning all Azure infrastructure components needed to run this demo in its full context. That includes a full Azure Kubernetes AKS cluster and [Azure AI](https://learn.microsoft.com/en-us/azure/ai-foundry/what-is-ai-foundry) Foundry HUB, project and finally deploying gpt-4 LLM model.
@@ -107,7 +107,7 @@ spring-azure-ai/
 │   │   ├── rest/                  # REST API controllers (chat and AI agent endpoints)
 │   │   ├── schedule/              # Scheduled jobs to load share prices on Azure Search VectorDatabase
 │   │   ├── service/               # Business logic for AI processing
-│   │   ├── tools/                 # AI autonomously invoked tools like sending out WhatsUp message, inquiring actual stock prices
+│   │   ├── tools/                 # AI autonomously invoked tools like sending out WhatsApp message, inquiring actual stock prices
 │   ├── resources/
 │   │   ├── application.yml        # Spring Boot configurations
 │   │   ├── prompts/               # AI prompts for chatbot
