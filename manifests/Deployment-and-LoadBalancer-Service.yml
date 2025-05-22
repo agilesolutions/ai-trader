@@ -50,17 +50,6 @@ spec:
               mountPath: /etc/podinfo
               readOnly: false
           env:
-            - name: DB_HOSTNAME
-              value: "mysql"
-            - name: DB_PORT
-              value: "3306"
-            - name: DB_NAME
-              value: "aidb"
-            - name: DB_USERNAME
-              value: "dbadmin"
-            - name: DB_PASSWORD
-              value: "RedhatAiAgent"
-
             - name: LABEL
               valueFrom:
                 fieldRef:

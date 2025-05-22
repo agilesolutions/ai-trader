@@ -1,1 +1,0 @@
-insert into share(id, company, quantity) values (1, 'AAPL', 100);
