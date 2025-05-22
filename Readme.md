@@ -15,6 +15,7 @@ The code on this product is demonstrating how to develop the core logic with Jav
   - Provision MySQL Flexible Server and Database to store stock portfolio records.
   - Provision Azure AI Foundry project, Storage Accounts and Containers and AZ key vaults and policies.
 
+[SEE Presentation](https://agilesolutions.github.io/ppt/ai-trader.pdf)
 ## What is the reason of having AI Agents implemented on your systems.
 1. freeing up human resources, letting these resources focus on strategic and create tasks like innovation. This will at the end improve the overall organizational performance.
 2. Agents are not getting tired, do not need weekends and holidays and can work around the clock 24/7.
