@@ -9,6 +9,10 @@ output "resource_group_name" {
   # Argument Reference
   value = azurerm_resource_group.aks_rg.name
 }
+output "mysql_server_fqdn" {
+  description = "MySQL Server FQDN"
+  value = azurerm_mysql_server.mysql_server.fqdn
+}
 output "openai_endpoint" {
   description = "The endpoint used to connect to the Cognitive Service Account"
   # Argument Reference

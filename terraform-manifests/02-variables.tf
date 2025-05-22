@@ -52,4 +52,31 @@ variable "partition_count" {
     condition     = contains([1, 2, 3, 4, 6, 12], var.partition_count)
     error_message = "The partition_count must be one of the following values: 1, 2, 3, 4, 6, 12."
   }
+  # DB Name
+  variable "mysql_db_name" {
+    description = "Azure MySQL Database Name"
+    type        = string
+    default     = "aidb"
+  }
+
+  # DB Username - Enable Sensitive flag
+  variable "mysql_db_username" {
+    description = "Azure MySQL Database Administrator Username"
+    type        = string
+    default     = "dbadmin"
+  }
+  # DB Password - Enable Sensitive flag
+  variable "mysql_db_password" {
+    description = "Azure MySQL Database Administrator Password"
+    type        = string
+    sensitive   = true
+    default     = "RedhatAiAgent"
+  }
+
+  # DB Schema Name
+  variable "mysql_db_schema" {
+    description = "Azure MySQL Database Schema Name"
+    type        = string
+    default     = "ai"
+  }
 }

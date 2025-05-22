@@ -1,6 +1,20 @@
 # About this ShowCase project demonstrating Agentic AI
 Agentic AI is the frontier and 3rd wave of AI (1. Predictive, 2. Generative). AI Agents are different from its predecessors in the sense that they are able act autonomously without human supervision and interference.
 Agentic AI is generally used in the field of automating repetitive tasks, like data entry, data analysis, inventory management, order management and customer support...
+
+## AI Stock Market Trader ShowCase with Spring AI and Azure AI Foundry
+This project demonstrates how to implement an AI Agent with [Java Spring AI](https://docs.spring.io/spring-ai/reference/index.html) framework and how use [Terraform](https://developer.hashicorp.com/terraform) Infrastructure-as-Code (IaC) tool to configure Azure AI Foundry components to hosting LLM models and Azure AKS Kubernetes cluster to run the containerized AI Agent as POD.
+## Full End-to-End, from Development, CI/CD, Deployment to Provisioning
+The code on this product is demonstrating how to develop the core logic with Java and Spring AI, Azure DevOps pipelines to  CI/CD deliver that logic on Azure ACR container registry and finally use Terraform to provision Azure AKS cluster, Azure Flexible server and Azure AI Foundry to provision everything needed to run this process. 
+- SpringBoot application Build process managed with Gradle.
+- Azure DevOps pipelines to build, run Spring AI JUnit Relevancy Factuality AI tests, HELM package and deploy application on Azure AKS cluster.
+- HELM charts to package and deploy Spring AI application
+- Terraform manifests:
+  - Build AKS Cluster.
+  - Provision AD Extra ID managed identities and RBAC rules.
+  - Provision MySQL Flexible Server and Database to store stock portfolio records.
+  - Provision Azure AI Foundry project, Storage Accounts and Containers and AZ key vaults and policies.
+
 ## What is the reason of having AI Agents implemented on your systems.
 1. freeing up human resources, letting these resources focus on strategic and create tasks like innovation. This will at the end improve the overall organizational performance.
 2. Agents are not getting tired, do not need weekends and holidays and can work around the clock 24/7.
@@ -9,8 +23,6 @@ Agentic AI is generally used in the field of automating repetitive tasks, like d
 The heart of AI is the LLM, this is the brain and memory of AI, LLM's can reason based on the knowledge it was provided, that memory and knowledge is limited to the data it was trained for, aka knowledge cut-off. 
 Turning an LLM into an AI Agent what you see demonstrated from this ShowCase project means providing the capabilities to read real-time and domain-specific data and autonomously act after reasoning based on that data it was provided; like sending notifications, change the state of your business systems like inserting order records on your OMS database.<br><br>
 Software integrators like me use frameworks like Spring AI to providing these capabilities and giving it the tools to collect additional data and act. That is what I try to demonstrate here through a simple Use Case which I worked out on this GitHub repository.
-## Agentic AI ShowCase with Spring AI and Azure AI Foundry
-This project demonstrates how to implement an AI Agent with [Java Spring AI](https://docs.spring.io/spring-ai/reference/index.html) framework and how use [Terraform](https://developer.hashicorp.com/terraform) Infrastructure-as-Code (IaC) tool to configure Azure AI Foundry components to hosting LLM models and Azure AKS Kubernetes cluster to run the containerized AI Agent as POD.
 ## Model Context Protocol (MCP)
 This AI Agent implementation is adhering [Model Context Protocol (MCP)](https://docs.spring.io/spring-ai/reference/api/mcp/mcp-overview.html) to letting that Agent communicate with external tools to fetching additional data on top of what it was learned and calling external tools executing tasks once its reasoning was done.
 
