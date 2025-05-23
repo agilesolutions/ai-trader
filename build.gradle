@@ -22,6 +22,9 @@ ext {
     commit = commit()
     branchName = branchName()
     set('springAiVersion', "1.0.0-M6")
+    // see https://spring.io/projects/spring-cloud
+    set('springCloudVersion', "2023.0.1")
+
 }
 
 repositories {
@@ -31,12 +34,23 @@ repositories {
     maven { url 'https://repo.spring.io/snapshot' }
 }
 
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.cloud:spring-cloud-dependencies:2023.0.1"
+        mavenBom("com.azure.spring:spring-cloud-azure-dependencies:5.9.0")
+    }
+}
+
+
 dependencies {
     // Bill of Materials
     implementation platform("org.springframework.ai:spring-ai-bom:1.0.0-M7")
     implementation platform("io.modelcontextprotocol.sdk:mcp-bom:0.8.1")
 
     implementation 'org.springframework.boot:spring-boot-starter-web'
+    // Azure dynamic app configs
+    implementation 'com.azure.spring:spring-cloud-azure-appconfiguration-config-web'
+    implementation 'com.azure.spring:spring-cloud-azure-appconfiguration-config'
     implementation 'org.springframework.ai:spring-ai-mcp-client-spring-boot-starter'
     implementation 'org.springframework.boot:spring-boot-starter-logging'
     implementation 'org.springframework.boot:spring-boot-starter-actuator'

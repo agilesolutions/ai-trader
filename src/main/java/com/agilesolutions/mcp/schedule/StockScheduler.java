@@ -7,6 +7,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
+import com.azure.spring.cloud.appconfiguration.config.AppConfigurationRefresh;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -17,6 +18,8 @@ import java.util.Date;
 public class StockScheduler {
 
     private final StockService stockService;
+
+    private final AppConfigurationRefresh refresh;
 
     @Scheduled(cron = "0 */1 * ? * *")
     public void scheduleTask() throws JsonProcessingException {
