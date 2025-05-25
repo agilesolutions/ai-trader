@@ -12,6 +12,10 @@ resource "azurerm_kubernetes_cluster" "aks" {
   # Identity (System Assigned or Service Principal)
   identity { type = "SystemAssigned" }
 
+  # Secret Store CSI Driver
+  key_vault_secrets_provider {
+    secret_rotation_enabled  = true
+  }
 
   azure_active_directory_role_based_access_control {
     admin_group_object_ids = [azuread_group.aks_administrators.id]

@@ -44,3 +44,7 @@ management:
     export:
       prometheus:
         enabled: true
+
+ai:
+  schedule:
+    interval:

@@ -97,7 +97,7 @@ stages:
                     azureSubscriptionConnection: 'aks-feature-flag-sc'
                     azureResourceGroup: 'aks-cluster-template_rg001'
                     kubernetesCluster: 'aks101cluster'
-                    manifests: $(Pipeline.Workspace)/manifests/Deployment-and-LoadBalancer-Service.yml
+                    manifests: $(Pipeline.Workspace)/manifests
                     imagePullSecrets: 'my-acr-secret'
                     containers: $(imageRepository):$(Build.BuildId)
                     # strategic merge patches applied

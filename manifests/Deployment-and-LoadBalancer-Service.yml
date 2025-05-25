@@ -46,6 +46,13 @@ spec:
                 port: http
 #          terminationGracePeriodSeconds: 10
           volumeMounts:
+            - mountPath: "/app/config.conf"
+              name: webserver-configuration
+              subPath: webserver-config
+              readOnly: true
+            - mountPath: "/app/application.properties"
+              name: webserver-configuration
+              subPath: webserver-properties
             - name: podinfo
               mountPath: /etc/podinfo
               readOnly: false
@@ -66,6 +73,12 @@ spec:
               - path: "annotations"
                 fieldRef:
                   fieldPath: metadata.annotations
+        - name: ai-configuration
+          csi:
+            driver: secrets-store.csi.k8s.io
+            readOnly: true
+            volumeAttributes:
+              secretProviderClass: "azure-kvname-user-msi"
 ---
 apiVersion: v1
 kind: Service
